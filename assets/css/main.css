@@ -1478,19 +1478,20 @@ section {
 /* Responsive adjustments */
 @media screen and (max-width: 767px) {
   .team .row {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
   }
 
   .team .member {
-    margin-bottom: 20px; /* Add space between team member cards when stacked */
+    flex: 0 1 calc(50% - 20px); /* Set each card to take 50% of the container width minus the gap */
+    margin-bottom: 20px; /* Add space between team member cards */
   }
 }
 
 @media screen and (max-width: 576px) {
-  .team .member img {
-    width: 120px; /* Adjust the image size for smaller screens */
-    height: 120px; /* Adjust the image size for smaller screens */
+  .team .member {
+    flex: 0 1 calc(100% - 20px); /* Set each card to take 100% of the container width minus the gap */
   }
 }
 
